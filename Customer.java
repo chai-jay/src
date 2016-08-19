@@ -1,5 +1,5 @@
 
-public class NameManager {
+public class Customer {
 	private String myName; 
 	
 	public String getFirstName() {
