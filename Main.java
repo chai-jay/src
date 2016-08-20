@@ -2,19 +2,15 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Customer simon = new Customer("Mr", "Simon", "Pieman", "1, the High Street", "0000000000", "simon@pieman.com", 1, GenderType.MALE);
+		Book book1 = new Book(1, "Introduction to Java", "Matt Greencroft", "12345");
+		Book book2 = new Book(2, "Better Java", "Joe Le Blanc", "23456");
 		
-		String simonMailingName = simon.getMailingName();
-		System.out.println(simonMailingName);
-		System.out.println(simon.getGender());
+		UI ui = new UI();
 		
-		if (simon.getGender() == GenderType.MALE) {
-			System.out.println("He is male.");
-		} else if (simon.getGender() == GenderType.FEMALE) {
-			System.out.println("She is female.");
-		} else {
-			System.out.println("Gender is unknown.");
-		}
+		ui.printHeader();
+		ui.printBook(book1);
+		ui.printBook(book2);
+		
 	}
 
 }
