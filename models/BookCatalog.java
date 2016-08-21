@@ -1,4 +1,4 @@
-
+package models;
 public class BookCatalog {
 	private Book[] bookArray = new Book[100];
 	private int nextPosition = 0;

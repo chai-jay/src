@@ -1,3 +1,5 @@
+package models;
+import utilities.GenderType;
 
 public class Customer {
 	private String title;

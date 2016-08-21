@@ -1,3 +1,6 @@
+package ui;
+import models.Book;
+import models.BookCatalog;
 
 public class Main {
 
