@@ -24,4 +24,12 @@ public class UI {
 		String startString = String.valueOf(start);
 		return fixLengthString(startString, length);
 	}
+	
+	public void printBookCatalog(Book[] bookCatalog) {
+		for (int i = 0; i < bookCatalog.length; i++) {
+			if (bookCatalog[i] != null) {
+				printBook(bookCatalog[i]);
+			}
+		}
+	}
 }
