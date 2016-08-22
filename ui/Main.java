@@ -1,6 +1,8 @@
 package ui;
 import models.Book;
 import models.BookCatalog;
+import models.Customer;
+import utilities.GenderType;
 
 public class Main {
 
@@ -23,6 +25,9 @@ public class Main {
 		if (foundBook != null) {
 			ui.printBook(foundBook);
 		}
+		
+		Customer customer = new Customer("Mr", "Michael", "Smith", "1 High Street", "1234", "a@b.com", 1, GenderType.MALE);
+		System.out.println(customer.getExpiryDate());
 		
 	}
 
