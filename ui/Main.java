@@ -1,4 +1,7 @@
 package ui;
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+
 import models.Book;
 import models.BookCatalog;
 import models.Customer;
@@ -7,6 +10,28 @@ import utilities.GenderType;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		double d = 1;
+		NumberFormat nf = NumberFormat.getCurrencyInstance();
+		nf.setMinimumFractionDigits(5);
+		nf.setMaximumFractionDigits(5);
+		
+		System.out.println(nf.format(d));
+		
+		for (int i = 0; i < 10; i++) {
+			d+= 0.1;
+			System.out.println(d);
+		}
+		
+		BigDecimal price = new BigDecimal("0.1"); // Can use double inside constructor but it loses precision.
+		BigDecimal addValue = new BigDecimal("0.1");
+		for (int i = 0; i < 10; i++) {
+			price = price.add(addValue);
+			System.out.println(price);
+		}
+		
+		
+		
 		Book book1 = new Book(1, "Introduction to Java", "Matt Greencroft", "12345");
 		Book book2 = new Book(2, "Better Java", "Joe Le Blanc", "23456");
 		
