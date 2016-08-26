@@ -1,24 +1,15 @@
 package models;
 
-public class Book {
-	private int bookID;
-	private String title;
+public class Book extends Material {
 	private String author;
 	private String isbn;
+	private int noOfPages;
 	
-	public Book(int bookID, String title, String author, String isbn) {
-		this.bookID = bookID;
-		this.title = title;
+	public Book(int id, String title, String author, String isbn, String branch, int noOfPages) {
+		super(id, title, branch);
 		this.author = author;
 		this.isbn = isbn;
-	}
-	
-	public int getBookID() {
-		return this.bookID;
-	}
-	
-	public String getTitle() {
-		return this.title;
+		this.noOfPages = noOfPages;
 	}
 	
 	public String getAuthor() {
@@ -27,5 +18,9 @@ public class Book {
 	
 	public String getIsbn() {
 		return this.isbn;
+	}
+	
+	public void sendForRepair() {
+		System.out.println("Book has been sent for repair.");
 	}
 }
