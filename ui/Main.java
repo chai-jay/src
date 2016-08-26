@@ -53,7 +53,8 @@ public class Main {
 		
 		Customer customer = new Customer("Mr", "Michael", "Smith", "1 High Street", "1234", "a@b.com", 1, GenderType.MALE);
 		System.out.println(customer.getExpiryDate());
-		
+		System.out.println(customer.getMailingName());
+
 	}
 
 }

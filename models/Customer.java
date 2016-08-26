@@ -39,9 +39,12 @@ public class Customer {
 	}
 	
 	public String getMailingName() {
-		String mailingName;
-		mailingName = this.title + " " + this.firstName.substring(0, 1) + " " + this.surname;
-		return mailingName;
+		StringBuilder sb = new StringBuilder(this.title);
+		sb.append(" ");
+		sb.append(this.firstName.substring(0, 1));
+		sb.append(" ");
+		sb.append(this.surname);
+		return sb.toString();
 	}
 	
 	public void setName(String title, String firstName, String surname) {
