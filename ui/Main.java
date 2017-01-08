@@ -6,6 +6,7 @@ import models.Book;
 import models.BookCatalog;
 import models.Customer;
 import models.DVD;
+import models.Material;
 import utilities.GenderType;
 
 public class Main {
@@ -61,7 +62,17 @@ public class Main {
 		System.out.println(customer.getMailingName());
 		
 		System.out.println(dvd1.lend(customer));
-
+		dvd1.licensed();
+		
+		System.out.println(dvd1.lend(customer));
+		System.out.println(dvd1.lend(customer));
+		
+		System.out.println(book1.lend(customer));
+		System.out.println(book1.lend(customer));
+		
+		System.out.println(book1.getLoanPeriod());
+		System.out.println(dvd1.getLoanPeriod());
+		
 	}
 
 }
