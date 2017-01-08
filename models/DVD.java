@@ -17,4 +17,20 @@ public class DVD extends Material {
 	public boolean isLicensed() {
 		return this.licensed;
 	}
+	
+	public void licensed() {
+		licensed = true;
+	}
+	
+	public boolean lend(Customer customer) {
+		if (licensed) {
+			return super.lend(customer);
+		} else {
+			return false;
+		}
+	}
+	
+	public int getLoanPeriod() {
+		return 21; // 3 weeks or 21 days
+	}
 }

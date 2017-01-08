@@ -23,4 +23,8 @@ public class Book extends Material {
 	public void sendForRepair() {
 		System.out.println("Book has been sent for repair.");
 	}
+	
+	public int getLoanPeriod() {
+		return 21; // 3 weeks or 21 days
+	}
 }
