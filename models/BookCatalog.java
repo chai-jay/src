@@ -12,13 +12,13 @@ public class BookCatalog {
 		nextPosition++;
 	}
 	
-	public Book findBook(String title) {
+	public Book findBook(String title) throws BookNotFoundException {
 		for (int i = 0; i < nextPosition; i++) {
 			Book currBook = bookArray[i];
 			if (currBook.getTitle().equalsIgnoreCase(title)) {
 				return currBook;
 			}
 		}
-		return null;
+		throw new BookNotFoundException();
 	}
 }

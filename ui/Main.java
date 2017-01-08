@@ -4,9 +4,9 @@ import java.text.NumberFormat;
 
 import models.Book;
 import models.BookCatalog;
+import models.BookNotFoundException;
 import models.Customer;
 import models.DVD;
-import models.Material;
 import utilities.GenderType;
 
 public class Main {
@@ -32,8 +32,6 @@ public class Main {
 			System.out.println(price);
 		}
 		
-		
-		
 		Book book1 = new Book(1, "Introduction to Java", "Matt Greencroft", "12345", "Anytown branch", 400);
 		Book book2 = new Book(2, "Better Java", "Joe Le Blanc", "23456", "Anytown branch", 150);
 		DVD dvd1 = new DVD(3, "An Epic Film About Java", "Anytown Branch", "Steven Spielberg", "99887", 120);
@@ -53,9 +51,18 @@ public class Main {
 		ui.printHeader();
 		ui.printBookCatalog(bookCatalog.getBookArray());
 		
-		Book foundBook = bookCatalog.findBook("better Java");
-		if (foundBook != null) {
+		Book foundBook;
+		try {
+			foundBook = bookCatalog.findBook("better");
 			ui.printBook(foundBook);
+		} catch(BookNotFoundException e) {
+			System.out.println("The book wasn't found.");
+		}
+		
+		try {
+			throw new RuntimeException("Something went wrong");			
+		} catch (RuntimeException e) {
+			// Do nothing
 		}
 		
 		Customer customer = new Customer("Mr", "Michael", "Smith", "1 High Street", "1234", "a@b.com", 1, GenderType.MALE);
@@ -67,7 +74,6 @@ public class Main {
 		
 		System.out.println(dvd1.equals(dvd2));
 		System.out.println(customer.equals(customer));
-		
 	}
 
 }
