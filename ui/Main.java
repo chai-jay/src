@@ -7,6 +7,9 @@ import models.BookCatalog;
 import models.BookNotFoundException;
 import models.Customer;
 import models.DVD;
+import models.Loan;
+import models.LoanAlreadyAddedException;
+import models.LoanRegistry;
 import utilities.GenderType;
 
 public class Main {
@@ -74,6 +77,22 @@ public class Main {
 		
 		System.out.println(dvd1.equals(dvd2));
 		System.out.println(customer.equals(customer));
+		
+		Loan firstLoan = new Loan(1, customer, book1);
+		System.out.println(firstLoan.getDueDate());
+		System.out.println(firstLoan);
+		
+		LoanRegistry registry = new LoanRegistry();
+		try {
+			registry.addLoan(firstLoan);
+			System.out.println("addLoan success");
+		} catch (LoanAlreadyAddedException e) {
+			System.out.println("addLoan failed");
+		}
+		
+		System.out.println(registry.isBookOnLoan(book1));
+		firstLoan.endLoan();
+		System.out.println(registry.isBookOnLoan(book1));
 	}
 
 }
